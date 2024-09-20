@@ -26,7 +26,7 @@ int main() {
 #include <stdlib.h>
 
 void allocArray(int ***p, int m, int n) {
-    int *data = (int *)malloc(sizeof(int*) * m * n);
+    int *data = (int *)malloc(sizeof(int) * m * n);
     *p = (int **)malloc(sizeof(int*) * m);
     for (int i = 0; i < m; ++i)
         (*p)[i] = data + i * n;
