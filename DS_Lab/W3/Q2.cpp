@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#define SIZE 2
+#define SIZE 100
 using namespace std;
 
 class Queue {
