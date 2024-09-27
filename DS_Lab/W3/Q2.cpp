@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#define SIZE 100
+#define SIZE 2
 using namespace std;
 
 class Queue {
@@ -16,8 +16,8 @@ public:
         if (isFull())
             return -1;
         else {
-            da[rear] = data;
             rear = (rear + 1) % SIZE;
+            da[rear] = data;
             cnt++;
             return 1;
         }
@@ -26,8 +26,8 @@ public:
         if (isEmpty())
             return NULL;
         else {
-            int *res = &da[front];  
             front = (front + 1) % SIZE;
+            int *res = &da[front];  
             cnt--;
             return res;
         }
