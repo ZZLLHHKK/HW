@@ -50,3 +50,32 @@ int main() {
         }
     }
 }
+
+
+/*another solution
+class Stack {
+public:
+    Stack() : top(0) {}
+    int push(int data) {
+        if (top > SIZE - 1) 
+            return -1;
+        else {
+            top++;
+            da[top-1] = data;
+            return 1;
+        }
+    }
+    int *pop() {
+        if (top == 0) 
+            return NULL;
+        else {
+            int *res = &da[top-1];
+            top--;
+            return res;
+        }
+    }
+private:
+    int da[SIZE];
+    int top;
+};
+*/
