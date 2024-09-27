@@ -62,3 +62,40 @@ int main() {
         }
     }
 }
+
+/*another solution : normal queue
+class Queue {
+public:
+    Queue() : front(0), rear(0), cnt(0) {}
+    int isFull() {
+        return (cnt == SIZE);
+    }
+    int isEmpty() {
+        return (cnt == 0);
+    }
+    int enqueue(int data) {
+        if (isFull())
+            return -1;
+        else {
+            da[rear++] = data;
+            cnt++;
+            return 1;
+        }
+    }
+    int *dequeue() {
+        if (isEmpty())
+            return NULL;
+        else {
+            int tmp = da[front];
+            int *res = &tmp;
+            for (int i = 0; i < rear - 1; ++i)
+                da[i] = da[i+1];  
+            cnt--, rear--;
+            return res;
+        }
+    }
+private:
+    int da[SIZE];
+    int front, rear, cnt;
+};
+*/
