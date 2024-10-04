@@ -50,23 +50,10 @@ public:
 		list = buf;
 	}
 	void bubbleSort() {
-        for (int i = 0; i < 10; ++i) {
-            Node *cur = list, *pre = NULL;
-            for (int j = 0; j < 9 && cur -> getNext() != NULL; ++j) {
-                Node *nextN = cur -> getNext();
-                if (cur -> getData() > nextN -> getData()) {
-                    if (pre == NULL) 
-                        list = nextN;
-                    else 
-                        pre -> setNext(nextN);
-                    cur -> setNext(nextN -> getNext());
-                    nextN -> setNext(cur);
-                    pre = nextN;
-                }
-                else {
-                    pre = cur;
-                    cur = cur -> getNext();
-                }
+        for (Node *i = list; i != NULL; i = i -> getNext()) {
+            for (Node *j = list; j -> getNext() != NULL; j = j -> getNext()) {
+                if (j -> getData() > j -> getNext() -> getData())
+                    swapN(j, j -> getNext());
             }
         }
     }
