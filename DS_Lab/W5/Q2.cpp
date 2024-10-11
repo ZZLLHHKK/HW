@@ -150,8 +150,6 @@ public:
         int dir[4] = {-SIZE, SIZE, -1, 1};
         for (int i = 0; i < 4; ++i) {
             int newP = p + dir[i];
-            if (i == LEFT && p % SIZE == 0) continue;
-            if (i == RIGHT && (p + 1) % SIZE == 0) continue;
             if (dfs(newP, vis, path))
                 return true;
         }
