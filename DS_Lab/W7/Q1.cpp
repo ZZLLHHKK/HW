@@ -57,7 +57,7 @@ public:
     }
     int h(Node *root) {
         if (root == NULL)
-            return 0;
+            return -1;
         else 
             return 1 + max(h(root -> left), h(root -> right));
     }
