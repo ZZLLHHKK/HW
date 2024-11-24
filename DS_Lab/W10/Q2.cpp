@@ -117,24 +117,24 @@ public:
 };
 
 int main() {
-	Trie *trie = new Trie();
-	string command, key, value;
-	while (1) {
-		cin >> command;
-		if (command == "insert") {
-			cin >> value;
-			trie->insert(value);
-		}
-		else if (command == "search") {
-			cin >> key;
-			if (trie->search(key))
-				cout << "exist" << endl;
-			else
-				cout << "not exist" << endl;
-		}
-		else if (command == "print") 
-			trie->preorder();
-		else if (command == "exit")
-			break;
-	}
+    Trie *trie = new Trie();
+    string command, key, value;
+    while (1) {
+        cin >> command;
+        if (command == "insert") {
+            cin >> value;
+            trie->insert(value);
+        }
+        else if (command == "search") {
+            cin >> key;
+            if (trie->search(key))
+                cout << "exist" << endl;
+            else
+                cout << "not exist" << endl;
+        }
+        else if (command == "print") 
+            trie->preorder();
+        else if (command == "exit")
+            break;
+    }
 }
