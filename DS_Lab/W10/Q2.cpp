@@ -18,13 +18,13 @@ public:
 	/*
 	construct a Trie.
 	*/
-	Trie() {
+    Trie() {
         root = new Node();
     }
 	/*
 	search trie for key, return true if exist, false if not.
 	*/
-	bool search(string key) {
+    bool search(string key) {
         Node *cur = root;
         for (char ch : key) {
             int id = ch - 'a';
@@ -37,7 +37,7 @@ public:
 	/*
 	insert value into trie.
 	*/
-	void insert(string value) {
+    void insert(string value) {
         Node* cur = root;
         int idx = 0;
 
@@ -57,7 +57,7 @@ public:
 
             int matchLen = 0;  // 找到匹配的前綴長度
             while (matchLen < seg.size() && idx + matchLen < value.size() &&
-                   seg[matchLen] == value[idx + matchLen])
+                    seg[matchLen] == value[idx + matchLen])
                 ++matchLen;
 
             if (matchLen == seg.size()) {  // 完全匹配，繼續往下走
@@ -100,7 +100,7 @@ public:
 	/*
 	display trie in pre-order, each element in a line, display space befoer element base on the level of 	the element. level 1 for 2 space, level 2 for 4 space, level 3 for 6 space and so on, root is level 	0.
 	*/
-	void preorder() { //中左右 1->2 2->4 3->6
+    void preorder() { //中左右 1->2 2->4 3->6
         cout << "[]\n";
         pre(root, 1);
     }
