@@ -101,7 +101,7 @@ private:
     }
 public:
     AVLTree() {
-        root = new BinaryTreeNode<T>();
+        root = nullptr;
     }
     int height(BinaryTreeNode<T> *n) {
         if (n == nullptr)
@@ -166,7 +166,9 @@ int main() {
     AVLTree<int> *tree = new AVLTree<int>();
     srand(0);
     for (int j = 0; j < 20; ++j) {
-        tree->insert(rand() % 100);
+        int r = rand() % 100;
+        tree->insert(r);
+        //cout << "insert :" << r << endl;
     }
     tree->inorder();
 }
